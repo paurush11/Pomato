@@ -1,11 +1,16 @@
 
 
 // Food
+import 'package:flutter/material.dart';
 import 'package:food_delivery/models/food.dart';
 import 'package:food_delivery/models/order.dart';
 import 'package:food_delivery/models/restaurant.dart';
 import 'package:food_delivery/models/user.dart';
 
+const KText = TextStyle(
+fontSize: 18,
+fontWeight: FontWeight.bold
+);
 final _burrito =
     Food(imageUrl: 'assets/images/burrito.jpg', name: 'Burrito', price: 8.99);
 final _steak =
@@ -26,35 +31,35 @@ final _salmon = Food(
 // Restaurants
 final _restaurant0 = Restaurant(
   imageUrl: 'assets/images/restaurant0.jpg',
-  name: 'Restaurant 0',
+  name: 'Khatir',
   address: '200 Main St, New York, NY',
   rating: 5,
   menu: [_burrito, _steak, _pasta, _ramen, _pancakes, _burger, _pizza, _salmon],
 );
 final _restaurant1 = Restaurant(
   imageUrl: 'assets/images/restaurant1.jpg',
-  name: 'Restaurant 1',
+  name: 'Folks',
   address: '200 Main St, New York, NY',
   rating: 4,
   menu: [_steak, _pasta, _ramen, _pancakes, _burger, _pizza],
 );
 final _restaurant2 = Restaurant(
   imageUrl: 'assets/images/restaurant2.jpg',
-  name: 'Restaurant 2',
+  name: 'Tama',
   address: '200 Main St, New York, NY',
   rating: 4,
   menu: [_steak, _pasta, _pancakes, _burger, _pizza, _salmon],
 );
 final _restaurant3 = Restaurant(
   imageUrl: 'assets/images/restaurant3.jpg',
-  name: 'Restaurant 3',
+  name: 'Milan',
   address: '200 Main St, New York, NY',
   rating: 2,
   menu: [_burrito, _steak, _burger, _pizza, _salmon],
 );
 final _restaurant4 = Restaurant(
   imageUrl: 'assets/images/restaurant4.jpg',
-  name: 'Restaurant 4',
+  name: 'Lalit',
   address: '200 Main St, New York, NY',
   rating: 3,
   menu: [_burrito, _ramen, _pancakes, _salmon],
