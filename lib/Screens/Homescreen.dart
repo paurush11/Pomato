@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Widgets/location.dart';
+import 'package:food_delivery/Widgets/locationfetch.dart';
 import 'package:food_delivery/Widgets/paytm.dart';
 import 'package:food_delivery/Widgets/rating_stars.dart';
 import 'package:food_delivery/Widgets/recent_orders.dart';
@@ -64,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.account_circle),
             iconSize: 30.0,
             onPressed: (){
-
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> Locationfetch()));
             },
           ),
           title: Text("Pomato",style: TextStyle(
