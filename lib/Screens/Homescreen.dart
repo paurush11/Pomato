@@ -10,11 +10,40 @@ import 'package:food_delivery/models/restaurant.dart';
 class HomeScreen extends StatefulWidget {
   final locationData;
   HomeScreen({this.locationData});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    getData(widget.locationData);
+    super.initState();
+  }
+  void getData (dynamic location){
+    List nearbyrest = location["popularity"]["nearby_res"];
+    List nearbyrestnames = location['nearby_restaurants'];
+    print(nearbyrest);
+
+    print(nearbyrestnames);
+    print(nearbyrestnames.length);
+    List<String> names = new List<String>();
+    List<String> photos = new List<String>();
+    List<String>address = new List<String>();
+    for(int i = 0;i<nearbyrestnames.length;i++)
+      {
+
+        names.add(location['nearby_restaurants'][i]['restaurant']['name']);
+        photos.add(location['nearby_restaurants'][i]['restaurant']['photos_url']);
+        address.add(location['nearby_restaurants'][i]['restaurant']['location']['address']);
+      }
+    print(names);
+    print(photos);
+    print(address);
+  }
+
   _buildRestaurants(){
     List<Widget> restaurantlist = [];
     restaurants.forEach((Restaurant restaurant) {
@@ -60,6 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Column(children: restaurantlist,);
   }
   @override
+
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(

@@ -6,19 +6,6 @@ class Networkhelper{
   final String query;
   Networkhelper(this.query);
 
-  // Future getdata() async {
-  //   print(url);
-  //   http.Response response = await http.get(url);
-  //   if(response.statusCode == 200)
-  //   {
-  //     return jsonDecode(response.body);
-  //   }
-  //   else
-  //   {
-  //     print(response.statusCode);
-  //   }
-  //
-  // }
   Future getresdata() async {
     var headers = {
       'Accept': 'application/json',

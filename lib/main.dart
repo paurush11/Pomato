@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_delivery/Screens/Homescreen.dart';
+import 'package:food_delivery/Widgets/locationfetch.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xff232F34)
       ),
       debugShowCheckedModeBanner: false,
-      home: HomeScreen()
+      home: Locationfetch()
     );
   }
 }
