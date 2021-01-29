@@ -19,7 +19,7 @@ class Networkhelper{
   //   }
   //
   // }
-  void getresdata() async {
+  Future getresdata() async {
     var headers = {
       'Accept': 'application/json',
       'user-key': 'd53b089bb5464fcff6dcba255ece9ae4',
@@ -27,7 +27,12 @@ class Networkhelper{
 
     var res = await http.get('https://developers.zomato.com/api/v2.1/geocode?$query', headers: headers);
     if (res.statusCode != 200) throw Exception('http.get error: statusCode= ${res.statusCode}');
-    print(res.body);
+    if(res.statusCode == 200)
+        {
+          print(res.body);
+          return jsonDecode(res.body);
+        }
+
   }
 
 

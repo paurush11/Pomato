@@ -8,6 +8,8 @@ import 'package:food_delivery/Widgets/recent_orders.dart';
 import 'package:food_delivery/data/data.dart';
 import 'package:food_delivery/models/restaurant.dart';
 class HomeScreen extends StatefulWidget {
+  final locationData;
+  HomeScreen({this.locationData});
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -70,6 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
             },
           ),
           title: Text("Pomato",style: TextStyle(
+
               fontSize: 25,
               fontFamily: "GloriaHallelujah",
 

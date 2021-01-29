@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_delivery/Screens/Homescreen.dart';
 import 'location.dart';
 import 'networking.dart';
 
@@ -30,6 +31,9 @@ class _LocationfetchState extends State<Locationfetch> {
     var query = params.entries.map((p) => '${p.key}=${p.value}').join('&');
     Networkhelper networkHelper = Networkhelper(query);
     var weatherData = await networkHelper.getresdata();
+    Navigator.push(context, MaterialPageRoute(builder: (context){
+      return HomeScreen(locationData: weatherData,);
+    }));
 
 
   }
